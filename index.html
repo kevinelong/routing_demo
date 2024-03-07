@@ -1,18 +1,18 @@
 <body></body>
 <script>
     const nav = `
-        <a href="./">Home</a>
-        <a href="./about">About</a>
+        <a href="${location.pathname}/">Home</a>
+        <a href="${location.pathname}/about">About</a>
         <br>
     `;
 
     const content = {
         "/": (e) => `Home`,
-        "/about": (e) => `About<br><a href="./index.html">Go Home</a>`
+        "/about": (e) => `About<br><a href="${location.pathname}/index.html">Go Home</a>`
     };
 
     function routeState(e) {
-        const path = location.pathname === "/index.html" ? "/" : location.pathname;
+        const path = location.pathname === `${location.pathname}/index.html` ? `${location.pathname}/` : location.pathname;
         const f = content[path] || ((e) => "404");
         document.body.innerHTML = nav + f(e);
         document.querySelectorAll("a").forEach(e => e.addEventListener("click", (e) => {
