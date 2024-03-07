@@ -1,14 +1,14 @@
 <body></body>
 <script>
     const nav = `
-        <a href="/">Home</a>
-        <a href="/about">About</a>
+        <a href="./">Home</a>
+        <a href="./about">About</a>
         <br>
     `;
 
     const content = {
         "/": (e) => `Home`,
-        "/about": (e) => `About<br><a href="/index.html">Go Home</a>`
+        "/about": (e) => `About<br><a href="./index.html">Go Home</a>`
     };
 
     function routeState(e) {
