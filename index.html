@@ -6,10 +6,9 @@
         <br>
     `;
 
-    const content = {
-        "/": (e) => `Home`,
-        "/about": (e) => `About<br><a href="${location.pathname}index.html">Go Home</a>`
-    };
+    const content = {};
+    content[location.pathname] = (e) => `Home`;
+    content[`${location.pathname}about`] = (e) => `About<br><a href="${location.pathname}index.html">Go Home</a>`;
 
     function routeState(e) {
         const f = content[location.pathname.replace("index.html", "")] || ((e) => "404");
