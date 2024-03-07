@@ -1,14 +1,14 @@
 <body></body>
 <script>
     const nav = `
-        <a href="${location.pathname}">Home</a>
-        <a href="${location.pathname}about">About</a>
+        <a href="./">Home</a>
+        <a href="./about">About</a>
         <br>
     `;
 
     const content = {};
     content[location.pathname] = (e) => `Home`;
-    content[`${location.pathname}about`] = (e) => `About<br><a href="${location.pathname}index.html">Go Home</a>`;
+    content[`${location.pathname}about`] = (e) => `About<br><a href="./index.html">Go Home</a>`;
 
     function routeState(e) {
         const f = content[location.pathname.replace("index.html", "")] || ((e) => "404");
